@@ -2,7 +2,7 @@
 
 Search and manage your saved links in Kalpa directly from Raycast.
 
-![Kalpa Extension](./assets/extension-icon.png)
+![Kalpa Extension](./media/extension-icon.png)
 
 ## Features
 

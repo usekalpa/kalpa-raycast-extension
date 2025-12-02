@@ -3,7 +3,7 @@
  * Opens the web app to get an API token for the extension
  */
 
-import { Action, ActionPanel, Detail, open, openExtensionPreferences } from "@raycast/api";
+import { Action, ActionPanel, Detail, openExtensionPreferences } from "@raycast/api";
 import { getApiToken, tokenIsExpired } from "./utils/auth";
 
 // Hardcoded production URL

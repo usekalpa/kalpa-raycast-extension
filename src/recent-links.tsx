@@ -54,7 +54,6 @@ export default function RecentLinksCommand() {
 
   // Group by time period
   const { today, yesterday, thisWeek, older } = useMemo(() => {
-    // eslint-disable-next-line react-hooks/purity -- Date.now() is intentionally called once per render for grouping
     const now = Date.now();
     const todayLinks: KalpaLink[] = [];
     const yesterdayLinks: KalpaLink[] = [];

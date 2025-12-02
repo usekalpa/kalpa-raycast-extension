@@ -3,19 +3,10 @@
  * Save the current browser URL to Kalpa (no-view command)
  */
 
-import {
-  showHUD,
-  showToast,
-  Toast,
-  getSelectedText,
-  Clipboard,
-  getFrontmostApplication,
-  getPreferenceValues,
-  open,
-} from "@raycast/api";
+import { showHUD, showToast, Toast, getSelectedText, Clipboard, getFrontmostApplication, open } from "@raycast/api";
+import { runAppleScript } from "@raycast/utils";
 import { getKalpaClient } from "./utils/kalpa-client";
 import { getApiToken } from "./utils/auth";
-import type { KalpaPreferences } from "./types";
 
 // Browser bundle identifiers
 const BROWSER_BUNDLE_IDS = [
@@ -41,8 +32,6 @@ interface BrowserTab {
  * Get the current browser tab URL and title using AppleScript
  */
 async function getCurrentBrowserTab(): Promise<BrowserTab | null> {
-  const { runAppleScript } = await import("@raycast/utils");
-
   const frontmostApp = await getFrontmostApplication();
   const bundleId = frontmostApp.bundleId;
 
@@ -143,7 +132,6 @@ function isValidUrl(str: string): boolean {
 }
 
 export default async function QuickSaveCommand() {
-  const prefs = getPreferenceValues<KalpaPreferences>();
   const token = getApiToken();
 
   // Check if API token is configured

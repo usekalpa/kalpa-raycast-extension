@@ -14,7 +14,6 @@ import type {
   PaginatedResponse,
   SaveLinkRequest,
   SaveLinkResponse,
-  UniversesListResponse,
   LinkSearchOptions,
 } from "../types";
 
